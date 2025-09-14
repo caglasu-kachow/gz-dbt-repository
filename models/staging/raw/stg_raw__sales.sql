@@ -20,3 +20,4 @@ renamed as (
 )
 
 select * from renamed
+ORDER BY products_id DESC

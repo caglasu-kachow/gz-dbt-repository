@@ -9,48 +9,47 @@ sources:
         description: GreenWeez sales
         loaded_at_field: date_date
         freshness:
-            warn_after: {count: 90, period: day}
-        columns: 
+          warn_after: { count: 90, period: day }
+        columns:
           - name: date_date
             description: her sipariş için siparişlerin verildiği tarih
-          - name:  orders_id
-            description: her sipariş için oluşturulan kimlik -FK to ship 
+          - name: orders_id
+            description: her sipariş için oluşturulan kimlik -FK to ship
             tests:
-                - not_null
+              - not_null
           - name: pdt_id
             description: FK to product
             tests:
-                - not_null
+              - not_null
           - name: revenue
-            description:  qty * selling price   
+            description: qty * selling price
           - name: quantity
             description: amount of qty for a purchase
-
 
       - name: product
         identifier: raw_gz_product
         description: products of GreenWeez
-        columns: 
+        columns:
           - name: products_id
             description: PK
             tests:
-                - unique
-                - not_null
-          - name: purchase_price 
+              - unique
+              - not_null
+          - name: purchase_price
             description: purchase price of the product
 
       - name: ship
         identifier: raw_gz_ship
         description: shipping data about GreenWeez sales
         columns:
-           - name: orders_id
-             description: individual ids for each purchase PK
-             tests:
-                - unique
-                - not_null
-           - name: shipping_fee
-             description: price of purchase ship paid by customer
-           - name: log_cost
-             description: cost of prepearing the parcel
-           - name: ship_cost
-             description: cost of carrier paid by GreenWeez  
+          - name: orders_id
+            description: individual ids for each purchase PK
+            tests:
+              - unique
+              - not_null
+          - name: shipping_fee
+            description: price of purchase ship paid by customer
+          - name: log_cost
+            description: cost of prepearing the parcel
+          - name: ship_cost
+            description: cost of carrier paid by GreenWeez
