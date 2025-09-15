@@ -39,5 +39,6 @@ models:
   my_new_project:
     # Applies to all files under models/example/
     mart:
-        finance
-        +materialized: table
+      +materialized: table
+    staging:
+      +materialized: view

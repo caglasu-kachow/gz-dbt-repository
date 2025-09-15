@@ -1,5 +1,4 @@
 
-{{config(materialized= 'table')}}
 with first_step as (
     select 
             date_date,
