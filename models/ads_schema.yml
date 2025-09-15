@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: raw_ads
+    database: disco-amphora-470808-j3
+    schema: gz_raw_data
+    tables:
+      - name: facebook
+        identifier: raw_gz_facebook
+      - name: bing
+        identifier: raw_gz_bing
+      - name: criteo
+        identifier: raw_gz_criteo
+      - name: adwords
+        identifier: raw_gz_adwords
+               
